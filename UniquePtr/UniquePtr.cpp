@@ -2,6 +2,10 @@
 //
 
 #include "stdafx.h"
+#include <string.h>
+#include <stdio.h>
+
+using namespace std;
 
 class MyUniquePtr
 {
@@ -40,8 +44,10 @@ void MyUniquePtr::MyPrint()
 int _tmain(int argc, _TCHAR* argv[])
 {
 	char *cstr = NULL;
+	cstr = new char[10];
+	const char * cs = "dd";
+	strcpy(cstr, cs);
 	MyUniquePtr cstrPtr(cstr);
-	cstr = "ab";
 	printf("cstr %x\n", cstr);
 	return 0;
 }
